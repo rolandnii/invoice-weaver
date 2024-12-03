@@ -1,0 +1,24 @@
+{
+    "currencies": [
+        {
+            "name": "Euro",
+            "icon": "€",
+            "code": "EUR"
+        },
+        {
+            "name": "Ghanaian Cedis",
+            "icon": "₵",
+            "code": "GHS"
+        },
+        {
+            "name": "US Dollar",
+            "icon": "$",
+            "code": "USD"
+        },
+        {
+            "name": "British Pound Sterling",
+            "icon": "£",
+            "code": "GBP"
+        }
+    ]
+}
