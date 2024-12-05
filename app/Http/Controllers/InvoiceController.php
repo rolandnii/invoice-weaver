@@ -154,16 +154,17 @@ class InvoiceController extends AppBaseController
         return $this->sendResponse($currency, __('messages.flash.invoice_currency_retrieved_successfully'));
     }
 
-    public function convertToPdf(Invoice $invoice): Response
+    public function convertToPdf(Invoice $invoice)
     {
-        ini_set('max_execution_time', 36000000);
+//        ini_set('max_execution_time', 36000000);
         $invoice->load(['client.user', 'invoiceTemplate', 'invoiceItems.product', 'invoiceItems.invoiceItemTax', 'invoiceTaxes', 'paymentQrCode']);
         $invoiceData = $this->invoiceRepository->getPdfData($invoice);
         $invoiceTemplate = $this->invoiceRepository->getDefaultTemplate($invoice);
 
-        $pdf = Pdf::loadView("invoices.invoice_template_pdf.$invoiceTemplate", $invoiceData);
 
-        return $pdf->stream('invoice.pdf');
+        $pdf = Pdf::loadView('invoices.templates.minimalist',$invoiceData);
+
+        return $pdf->stream('invoices.pdf');
     }
 
     public function updateInvoiceStatus(Invoice $invoice, $status): mixed

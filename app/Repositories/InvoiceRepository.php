@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Mail\InvoiceCreateClientMail;
 use App\Models\Client;
+use App\Models\Currency;
 use App\Models\Invoice;
 use App\Models\InvoiceItem;
 use App\Models\InvoiceItemTax;
@@ -431,7 +432,11 @@ class InvoiceRepository extends BaseRepository
             $data['totalTax'][] = $item['quantity'] * $item['price'] * $totalTax / 100;
         }
 
-        $data['setting'] = Setting::toBase()->pluck('value', 'key')->toArray();
+//        $data['setting'] = Setting::toBase()->pluck('value', 'key')->toArray();
+        $data['currency'] = Currency::select('icon','code')
+            ->where('id', $invoice->currency_id)
+            ->first();
+        ;
 
         return $data;
     }

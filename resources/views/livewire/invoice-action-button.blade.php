@@ -14,14 +14,14 @@
         $isDraft = $row->status == 0 ? 0 : 1;
     @endphp
     <ul class="dropdown-menu min-w-170px" aria-labelledby="dropdownMenuButton1">
-        @if ($isEdit != 1)
+{{--        @if ($isEdit != 1)--}}
             <li>
                 <a href="{{ route('invoices.edit', $row->id) }}" class="dropdown-item text-hover-primary me-1 edit-btn"
                     data-bs-toggle="tooltip" title="{{ __('messages.common.edit') }}" data-turbo="false">
                     {{ __('messages.common.edit') }}
                 </a>
             </li>
-        @endif
+{{--        @endif--}}
         <li>
             <a href="#" data-id="{{ $row->id }}"
                 class="delete-btn dropdown-item me-1 text-hover-primary invoice-delete-btn" data-bs-toggle="tooltip"
@@ -29,15 +29,15 @@
                 {{ __('messages.common.delete') }}
             </a>
         </li>
-        @if ($isPaid != 1)
-            <li>
-                <a href="#" data-id="{{ $row->id }}"
-                    class="reminder-btn dropdown-item me-1 text-hover-primary" data-bs-toggle="tooltip"
-                    title="{{ __('messages.invoice.payment_reminder_mail') }}">
-                    {{ __('messages.common.reminder') }}
-                </a>
-            </li>
-        @endif
+{{--        @if ($isPaid != 1)--}}
+{{--            <li>--}}
+{{--                <a href="#" data-id="{{ $row->id }}"--}}
+{{--                    class="reminder-btn dropdown-item me-1 text-hover-primary" data-bs-toggle="tooltip"--}}
+{{--                    title="{{ __('messages.invoice.payment_reminder_mail') }}">--}}
+{{--                    {{ __('messages.common.reminder') }}--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        @endif--}}
         @if ($isDraft)
             <li>
                 <a href="javascript:void(0)" data-url="{{ route('invoice-show-url', $row->invoice_id) }}"
@@ -57,14 +57,14 @@
                 </a>
             </li>
         @endif
-        @if ($isPaid != 1)
-            <li>
-                <a href="javascript:void(0)" data-id="{{ $row->id }}"
-                    class="dropdown-item text-hover-primary me-1 open-send-whatapp-invoice" data-bs-toggle="tooltip"
-                    title="{{ __('messages.invoice.send_whatsapp') }}">
-                    {{ __('messages.invoice.send_whatsapp') }}
-                </a>
-            </li>
-        @endif
+{{--        @if ($isPaid != 1)--}}
+{{--            <li>--}}
+{{--                <a href="javascript:void(0)" data-id="{{ $row->id }}"--}}
+{{--                    class="dropdown-item text-hover-primary me-1 open-send-whatapp-invoice" data-bs-toggle="tooltip"--}}
+{{--                    title="{{ __('messages.invoice.send_whatsapp') }}">--}}
+{{--                    {{ __('messages.invoice.send_whatsapp') }}--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        @endif--}}
     </ul>
 </div>

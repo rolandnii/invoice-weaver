@@ -102,28 +102,28 @@
                         <td>
                             {{ Form::number('price[]', $invoiceItem->price, ['class' => 'form-control price-input price ', 'oninput' => "validity.valid||(value=value.replace(/[e\+\-]/gi,''))", 'min' => '0', 'step' => '.01', 'required', 'onKeyPress' => 'if(this.value.length==8) return false;']) }}
                         </td>
-                        <td>
-                            <select name="tax[]" class='form-select  fw-bold tax io-select2' data-control='select2'
-                                multiple="multiple">
-                                @foreach ($taxes as $tax)
-                                    @if (empty($selectedTaxes))
-                                        <option value="{{ $tax->value }}" data-id="{{ $tax->id }}">
-                                            {{ $tax->name }}
-                                        </option>
-                                    @elseif(in_array($tax->id, $selectedTaxes[$invoiceItem->id]))
-                                        <option value="{{ $tax->value }}"
-                                            {{ in_array($tax->id, $selectedTaxes[$invoiceItem->id]) && in_array($tax->id, $selectedTaxes[$invoiceItem->id]) ? 'selected' : '' }}
-                                            data-id="{{ $tax->id }}">
-                                            {{ $tax->name }}
-                                        </option>
-                                    @else
-                                        <option value="{{ $tax->value }}" data-id="{{ $tax->id }}">
-                                            {{ $tax->name }}
-                                        </option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </td>
+{{--                        <td>--}}
+{{--                            <select name="tax[]" class='form-select  fw-bold tax io-select2' data-control='select2'--}}
+{{--                                multiple="multiple">--}}
+{{--                                @foreach ($taxes as $tax)--}}
+{{--                                    @if (empty($selectedTaxes))--}}
+{{--                                        <option value="{{ $tax->value }}" data-id="{{ $tax->id }}">--}}
+{{--                                            {{ $tax->name }}--}}
+{{--                                        </option>--}}
+{{--                                    @elseif(in_array($tax->id, $selectedTaxes[$invoiceItem->id]))--}}
+{{--                                        <option value="{{ $tax->value }}"--}}
+{{--                                            {{ in_array($tax->id, $selectedTaxes[$invoiceItem->id]) && in_array($tax->id, $selectedTaxes[$invoiceItem->id]) ? 'selected' : '' }}--}}
+{{--                                            data-id="{{ $tax->id }}">--}}
+{{--                                            {{ $tax->name }}--}}
+{{--                                        </option>--}}
+{{--                                    @else--}}
+{{--                                        <option value="{{ $tax->value }}" data-id="{{ $tax->id }}">--}}
+{{--                                            {{ $tax->name }}--}}
+{{--                                        </option>--}}
+{{--                                    @endif--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </td>--}}
                         <td class="text-end item-total pt-8 text-nowrap">
                             {{ number_format($invoiceItem->total, 2) }}
                         </td>

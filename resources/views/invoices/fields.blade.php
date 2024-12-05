@@ -108,15 +108,15 @@
                         <td>
                             {{ Form::number('price[]', null, ['class' => 'form-control price-input price ', 'oninput' => "validity.valid||(value=value.replace(/[e\+\-]/gi,''))", 'min' => '0', 'value' => '0', 'step' => '.01', 'pattern' => "^\d*(\.\d{0,2})?$", 'required', 'onKeyPress' => 'if(this.value.length==8) return false;']) }}
                         </td>
-                        <td>
-                            <select name="tax[]" class='form-select io-select2 fw-bold tax' data-control='select2'
-                                multiple="multiple">
-                                @foreach ($taxes as $tax)
-                                    <option value="{{ $tax->value }}" data-id="{{ $tax->id }}"
-                                        {{ $defaultTax == $tax->id ? 'selected' : '' }}>{{ $tax->name }}</option>
-                                @endforeach
-                            </select>
-                        </td>
+{{--                        <td>--}}
+{{--                            <select name="tax[]" class='form-select io-select2 fw-bold tax' data-control='select2'--}}
+{{--                                multiple="multiple">--}}
+{{--                                @foreach ($taxes as $tax)--}}
+{{--                                    <option value="{{ $tax->value }}" data-id="{{ $tax->id }}"--}}
+{{--                                        {{ $defaultTax == $tax->id ? 'selected' : '' }}>{{ $tax->name }}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </td>--}}
                         <td class="text-end item-total pt-8 text-nowrap">
                             @if (!getSettingValue('currency_after_amount'))
                                 <span class="invoice-selected-currency">{{ getCurrencySymbol() }}</span>
@@ -244,11 +244,11 @@
 <div class="float-end">
     <div class="form-group col-sm-12">
         <button type="button" name="draft" class="btn btn-primary mx-1 ms-ms-3 mb-3 mb-sm-0" id="saveAsDraft"
-            data-status="0" value="0">{{ __('messages.common.save_draft') }}
+            data-status="0" value="0">{{ __('Save') }}
         </button>
-        <button type="button" name="save" class="btn btn-primary mx-1 ms-ms-3 mb-3 mb-sm-0" id="saveAndSend"
-            data-status="1" value="1">{{ __('messages.common.save_send') }}
-        </button>
+{{--        <button type="button" name="save" class="btn btn-primary mx-1 ms-ms-3 mb-3 mb-sm-0" id="saveAndSend"--}}
+{{--            data-status="1" value="1">{{ __('messages.common.save_send') }}--}}
+{{--        </button>--}}
         <a href="{{ route('invoices.index') }}"
             class="btn btn-secondary btn-active-light-primary">{{ __('messages.common.cancel') }}</a>
     </div>
