@@ -70,7 +70,7 @@ class InvoiceController extends AppBaseController
 
     public function convertToPdf(Invoice $invoice): Response
     {
-        dd($invoice);
+
         $invoice->load('client.user', 'invoiceTemplate', 'invoiceItems.product', 'invoiceItems.invoiceItemTax');
         if (getLogInUserId() != $invoice->client->user->id) {
             abort(404);

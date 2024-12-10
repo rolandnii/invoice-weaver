@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
@@ -238,16 +239,17 @@ class InvoiceRepository extends BaseRepository
 
             DB::commit();
 
-            if ($invoice->status != Invoice::DRAFT) {
-                $input['invoiceData'] = $invoice;
-                $input['clientData'] = $invoice->client->user->toArray();
-                if (getSettingValue('mail_notification')) {
-                    Mail::to($invoice->client->user->email)->send(new InvoiceCreateClientMail($input));
-                }
-            }
+//            if ($invoice->status != Invoice::DRAFT) {
+//                $input['invoiceData'] = $invoice;
+//                $input['clientData'] = $invoice->client->user->toArray();
+//                if (getSettingValue('mail_notification')) {
+//                    Mail::to($invoice->client->user->email)->send(new InvoiceCreateClientMail($input));
+//                }
+//            }
 
             return $invoice;
         } catch (Exception $exception) {
+            Log::error($exception);
             throw new UnprocessableEntityHttpException($exception->getMessage());
         }
     }

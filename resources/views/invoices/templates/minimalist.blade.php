@@ -24,6 +24,7 @@
             return sprintf("%s %s", $currency?->code, $amount);
         };
 
+
         function capStr($str) {
           return str(strtolower($str))->title();
         }

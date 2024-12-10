@@ -12,6 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
@@ -41,16 +42,19 @@ class RegisteredUserController extends Controller
         ]);
 
         /** @var User $user */
-        $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        $user->assignRole('admin');
-        $client = Client::create([
-            'user_id' => $user->id,
-        ]);
+       $user =  DB::transaction(function () use ($request) {
+            $user = User::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+            $user->assignRole('admin');
+            return $user;
+        });
+//        $client = Client::create([
+//            'user_id' => $user->id,
+//        ]);
 
         event(new Registered($user));
 

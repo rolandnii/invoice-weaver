@@ -501,8 +501,8 @@ listenClick("#saveAsDraft,#saveAndSend", function (event) {
 
     if (invoiceStates == 1) {
         swal({
-            title: Lang.get("js.send_invoice") + " !",
-            text: Lang.get("js.are_you_sure_send"),
+            title: Lang.get("create invoice") + " !",
+            text: Lang.get("are you sure"),
             icon: "warning",
             buttons: {
                 confirm: Lang.get("js.yes_send"),
