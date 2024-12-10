@@ -24,6 +24,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -66,17 +67,18 @@ class InvoiceController extends AppBaseController
     {
         try {
             DB::beginTransaction();
-            $invoice = $this->invoiceRepository->saveInvoice($request->all());
-            if ($request->status != Invoice::DRAFT) {
-                $this->invoiceRepository->saveNotification($request->all(), $invoice);
-                DB::commit();
 
-                return $this->sendResponse($invoice, __('messages.flash.invoice_saved_and_sent_successfully'));
-            }
+            $invoice = $this->invoiceRepository->saveInvoice($request->all());
+//            if ($request->status != Invoice::DRAFT) {
+//                $this->invoiceRepository->saveNotification($request->all(), $invoice);
+//                DB::commit();
+//
+//                return $this->sendResponse($invoice, __('messages.flash.invoice_saved_and_sent_successfully'));
+//            }
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-
+           Log::error($e);
             return $this->sendError($e->getMessage());
         }
 

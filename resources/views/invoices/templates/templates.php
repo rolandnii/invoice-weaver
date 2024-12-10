@@ -16,11 +16,12 @@
         <input class="form-control price-input price " required="" name="price[]" type="number" oninput="validity.valid||(value=value.replace(/[e\+\-]/gi,''))" min='0' step='.01' onKeyPress="if(this.value.length==8) return false;">
     </td>
     <td class="">
-        <select data-link="defaultTax" class="form-select taxId tax  fw-bold" name="tax[]" placeholder="Select Tax" multiple="multiple">
-            {{for taxes}}
-               <option value="{{:value}}" data-id="{{:id}}" {{:is_default ? 'selected' : '' }}>{{:name}}</option>
-            {{/for}}
-        </select>
+<!--        <select data-link="defaultTax" class="form-select taxId tax  fw-bold" name="tax[]" placeholder="Select Tax" multiple="multiple">-->
+<!--            {{for taxes}}-->
+<!--               <option value="{{:value}}" data-id="{{:id}}" {{:is_default ? 'selected' : '' }}>{{:name}}</option>-->
+<!--            {{/for}}-->
+<!--        </select>-->
+0.00
     </td>
     <td class="tbAmount text-right item-total pt-8 text-nowrap">
 
