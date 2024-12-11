@@ -93,7 +93,7 @@ class Client extends Model
         'last_name' => 'required',
         'email' => 'required|email:filter|unique:users,email',
         'password' => 'required|same:password_confirmation|min:6',
-        'postal_code' => 'required|string',
+        'postal_code' => 'nullable|string',
         'address' => 'nullable|string',
         'website' => 'nullable|url',
     ];

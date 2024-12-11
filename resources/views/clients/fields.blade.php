@@ -60,48 +60,48 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-6">
-        <div class="mb-5">
-            {{ Form::label('website', __('messages.client.website') . ':', ['class' => 'form-label mb-3']) }}
-            {{ Form::text('website', null, ['class' => 'form-control', 'placeholder' => __('messages.client.website')]) }}
-        </div>
-    </div>
-    <div class="col-lg-6">
-        <div class="mb-5">
-            {{ Form::label('postal_code', __('messages.client.postal_code') . ':', ['class' => 'form-label  mb-3 required']) }}
-            {{ Form::text('postal_code', null, ['class' => 'form-control', 'placeholder' => __('messages.client.postal_code'), 'required']) }}
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="mb-5">
-            {{ Form::label('country', __('messages.client.country') . ':', ['class' => 'form-label mb-3']) }}
-            {{ Form::select('country_id', $countries, null, ['id' => 'countryId', 'class' => 'form-select io-select2 ', 'placeholder' => __('messages.client.country'), 'data-control' => 'select2']) }}
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="mb-5">
-            {{ Form::label('state', __('messages.client.state') . ':', ['class' => 'form-label mb-3']) }}
-            {{ Form::select('state_id', [], null, ['id' => 'stateId', 'class' => 'form-select io-select2 ', 'placeholder' => __('messages.client.state'), 'data-control' => 'select2']) }}
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="mb-5">
-            {{ Form::label('city', __('messages.client.city') . ':', ['class' => 'form-label mb-3']) }}
-            {{ Form::select('city_id', [], null, ['id' => 'cityId', 'class' => 'form-select io-select2 ', 'placeholder' => __('messages.client.city'), 'data-control' => 'select2']) }}
-        </div>
-    </div>
+{{--    <div class="col-lg-6">--}}
+{{--        <div class="mb-5">--}}
+{{--            {{ Form::label('website', __('messages.client.website') . ':', ['class' => 'form-label mb-3']) }}--}}
+{{--            {{ Form::text('website', null, ['class' => 'form-control', 'placeholder' => __('messages.client.website')]) }}--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="col-lg-6">--}}
+{{--        <div class="mb-5">--}}
+{{--            {{ Form::label('postal_code', __('messages.client.postal_code') . ':', ['class' => 'form-label  mb-3 required']) }}--}}
+{{--            {{ Form::text('postal_code', null, ['class' => 'form-control', 'placeholder' => __('messages.client.postal_code'), 'required']) }}--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="col-lg-4">--}}
+{{--        <div class="mb-5">--}}
+{{--            {{ Form::label('country', __('messages.client.country') . ':', ['class' => 'form-label mb-3']) }}--}}
+{{--            {{ Form::select('country_id', $countries, null, ['id' => 'countryId', 'class' => 'form-select io-select2 ', 'placeholder' => __('messages.client.country'), 'data-control' => 'select2']) }}--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="col-lg-4">--}}
+{{--        <div class="mb-5">--}}
+{{--            {{ Form::label('state', __('messages.client.state') . ':', ['class' => 'form-label mb-3']) }}--}}
+{{--            {{ Form::select('state_id', [], null, ['id' => 'stateId', 'class' => 'form-select io-select2 ', 'placeholder' => __('messages.client.state'), 'data-control' => 'select2']) }}--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="col-lg-4">--}}
+{{--        <div class="mb-5">--}}
+{{--            {{ Form::label('city', __('messages.client.city') . ':', ['class' => 'form-label mb-3']) }}--}}
+{{--            {{ Form::select('city_id', [], null, ['id' => 'cityId', 'class' => 'form-select io-select2 ', 'placeholder' => __('messages.client.city'), 'data-control' => 'select2']) }}--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="col-lg-6">
         <div class="mb-5">
             {{ Form::label('address', __('messages.client.address') . ':', ['class' => 'form-label mb-3']) }}
-            {{ Form::textarea('address', null, ['class' => 'form-control', 'placeholder' => __('messages.client.address'), 'rows' => '5']) }}
+            {{ Form::text('address', null, ['class' => 'form-control', 'placeholder' => __('messages.client.address'), 'rows' => '5']) }}
         </div>
     </div>
-    <div class="col-lg-6">
-        <div class="mb-5">
-            {{ Form::label('notes', __('messages.client.notes') . ':', ['class' => 'form-label mb-3']) }}
-            {{ Form::textarea('note', null, ['class' => 'form-control', 'placeholder' => __('messages.client.notes'), 'rows' => '5']) }}
-        </div>
-    </div>
+{{--    <div class="col-lg-6">--}}
+{{--        <div class="mb-5">--}}
+{{--            {{ Form::label('notes', __('messages.client.notes') . ':', ['class' => 'form-label mb-3']) }}--}}
+{{--            {{ Form::textarea('note', null, ['class' => 'form-control', 'placeholder' => __('messages.client.notes'), 'rows' => '5']) }}--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="col-lg-6 mb-7">
         {{ Form::label('company_name', __('messages.setting.company_name') . ':', ['class' => 'form-label mb-3']) }}
         {{ Form::text('company_name', null, ['class' => 'form-control', 'placeholder' => __('messages.setting.company_name')]) }}
@@ -128,10 +128,10 @@
             <div class="form-text">{{ __('messages.flash.allowed_file_types_png_jpg_jpeg') }}</div>
         </div>
     </div>
-    <div class="col-xl-3 col-lg-4 mb-7">
-        {{ Form::label('vat_no', $vatNoLabel . ':', ['class' => 'form-label mb-3']) }}
-        {{ Form::text('vat_no', null, ['class' => 'form-control', 'placeholder' => $vatNoLabel]) }}
-    </div>
+{{--    <div class="col-xl-3 col-lg-4 mb-7">--}}
+{{--        {{ Form::label('vat_no', $vatNoLabel . ':', ['class' => 'form-label mb-3']) }}--}}
+{{--        {{ Form::text('vat_no', null, ['class' => 'form-control', 'placeholder' => $vatNoLabel]) }}--}}
+{{--    </div>--}}
 </div>
 <div class="float-end d-flex mt-5">
     {{ Form::submit(__('messages.common.save'), ['class' => 'btn btn-primary me-3']) }}
