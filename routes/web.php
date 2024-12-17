@@ -22,23 +22,7 @@ Route::get('/', function () {
 	return redirect('login');
 });
 
-Route::get('/send-mail', function () {
-//    \Illuminate\Support\Facades\Mail::raw('this is me testing', function ($message) {
-//        $message->to('rolalu.me@gmail.com')
-//            ->from('noreply@invoiceweaver.com')
-//            ->subject('Test Email');
-//    });
 
-    $user = \App\Models\User::query()
-        ->where('email','rolalu.me@gmail.com')
-        ->first();
-    $user->sendPasswordResetNotification(bin2hex(random_bytes(10)));
-    $user->sendEmailVerificationNotification();
-
-    return response()->json([
-        'ok' => true
-    ]);
-});
 
 
 
