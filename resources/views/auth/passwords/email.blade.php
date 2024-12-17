@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-<form method="POST" class="form-signin" action="{{ route('password.email') }}" autocomplete="off">
+<form method="POST" class="form-signin" action="{{ route('password.send-email') }}" autocomplete="off">
     @csrf
 
     <div class="form-group">

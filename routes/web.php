@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ForgotPasswordController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,14 +23,26 @@ Route::get('/', function () {
 });
 
 Route::get('/send-mail', function () {
-    \Illuminate\Support\Facades\Mail::raw('this is me testing', function ($message) {
-        $message->to('rolalu.me@gmail.com')
-            ->from('noreply@invoiceweaver.com')
-            ->subject('Test Email');
-    });
+//    \Illuminate\Support\Facades\Mail::raw('this is me testing', function ($message) {
+//        $message->to('rolalu.me@gmail.com')
+//            ->from('noreply@invoiceweaver.com')
+//            ->subject('Test Email');
+//    });
+
+    $user = \App\Models\User::query()
+        ->where('email','rolalu.me@gmail.com')
+        ->first();
+    $user->sendPasswordResetNotification(bin2hex(random_bytes(10)));
+    $user->sendEmailVerificationNotification();
+
+    return response()->json([
+        'ok' => true
+    ]);
 });
 
 
+
+Route::post('/forgot-password',[ForgotPasswordController::class, 'store'])->middleware('guest')->name('password.send-email');
 
 Auth::routes(['verify' => true, 'register' => true]);
 
