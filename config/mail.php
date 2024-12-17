@@ -52,6 +52,7 @@ return [
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+
             'timeout' => null,
             'auth_mode' => null,
         ],
@@ -95,7 +96,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'm@example.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@invoiceweaver.com'),
         'name' => env('MAIL_FROM_NAME', 'Invoice Weaver'),
     ],
 
