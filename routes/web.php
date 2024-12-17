@@ -20,6 +20,14 @@ Route::get('/', function () {
 	return redirect('login');
 });
 
+Route::get('/send-mail', function () {
+    \Illuminate\Support\Facades\Mail::raw('this is me testing', function ($message) {
+        $message->to('rolalu.me@gmail.com')
+            ->from('noreply@invoiceweaver.com')
+            ->subject('Test Email');
+    });
+});
+
 
 
 Auth::routes(['verify' => true, 'register' => true]);
