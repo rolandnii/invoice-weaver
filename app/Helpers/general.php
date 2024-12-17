@@ -797,7 +797,7 @@ if (!function_exists('increment_invoice_number')) {
     function increment_invoice_number() {
         $company_id         = company_id();
         $data               = array();
-        $data['value']      = get_company_option('invoice_starting') + 1;
+        $data['value']      = floatval(get_company_option('invoice_starting'))  + 1;
         $data['company_id'] = $company_id;
         $data['updated_at'] = date('Y-m-d H:i:s');
 
@@ -817,7 +817,7 @@ if (!function_exists('increment_quotation_number')) {
     function increment_quotation_number() {
         $company_id         = company_id();
         $data               = array();
-        $data['value']      = get_company_option('quotation_starting') + 1;
+        $data['value']      = floatval(get_company_option('quotation_starting')) + 1;
         $data['company_id'] = $company_id;
         $data['updated_at'] = date('Y-m-d H:i:s');
 
