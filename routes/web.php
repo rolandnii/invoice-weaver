@@ -19,12 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-	return redirect('login');
+	return view('welcome');
 });
-
-
-
-
 
 Route::post('/forgot-password',[ForgotPasswordController::class, 'store'])->middleware('guest')->name('password.send-email');
 
