@@ -10383,6 +10383,7 @@ body {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
+  display: none;
 }
 
 .pace-inactive {
@@ -10397,6 +10398,7 @@ body {
 	right: 100%;
 	width: 100%;
 	height: 4px;
+    display: none;
 }
 /* End pace Css */
 

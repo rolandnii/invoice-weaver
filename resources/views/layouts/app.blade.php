@@ -190,8 +190,6 @@
 
     <script src="{{ asset('backend/assets/js/print.js') }}"></script>
      <script src="{{ asset('backend/assets/js/pace.min.js') }}"></script>
-{{--     <script data-pace-options='{ "elements": { "selectors": [".selector"] }, "startOnPageLoad": false }' src="{{ asset('backend/assets/js/pace.min.js') }}"></script>--}}
-{{--     <script data-pace-options='{ "ajax": false }' src="{{ asset('backend/assets/js/pace.min.js') }}"></script>--}}
     <script src="{{ asset('backend/assets/js/clipboard.min.js') }}"></script>
     <script src="{{ asset('backend/plugins/moment/moment.js') }}"></script>
 
