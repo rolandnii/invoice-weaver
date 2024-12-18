@@ -31,10 +31,10 @@
 								<a href="/" class="fxt-logo"><img src="{{asset('uploads/media/white-logo.png')}}" alt="Logo"></a>
 							</div>
 							<div class="fxt-transformY-50 fxt-transition-delay-2" style="color: white;">
-                                <h1>Welcome To Our {{ config('app.name') }}</h1>
+{{--                                <h1>Welcome To Our {{ config('app.name') }}</h1>--}}
                             </div>
                             <div class="fxt-transformY-50 fxt-transition-delay-3" style="color: #ffffff;">
-                                <p>Manage your business efficiently with our powerful suite of tools. From invoicing and expense tracking to customer management and reporting.</p>
+{{--                                <p>Manage your business efficiently with our powerful suite of tools. From invoicing and expense tracking to customer management and reporting.</p>--}}
                             </div>
                             
 						</div>
