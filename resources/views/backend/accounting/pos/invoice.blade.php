@@ -109,6 +109,8 @@
            $taxes[$i_tax->name] += $i_tax->amount;
        }
 
+
+
 @endphp
 <div class="receipt">
     <div class="logo">
@@ -135,6 +137,12 @@
             @php
                 $discount += $invoice_item->discount;
                 $quantity += $invoice_item->quantity;
+                $amount_paid = function () use($invoice) {
+                    if ( (float) $invoice->paid == 0 && $invoice->status == 'Paid' ) {
+                        return  $invoice->grand_total;
+                    }
+                    return $invoice->paid;
+                }
             @endphp
         @endforeach
     </div>
@@ -171,7 +179,7 @@
         </div>
         <div class="total-row">
             <span>Amount Paid</span>
-            <span class="price">{{$format_amount($invoice->paid)}}</span>
+            <span class="price">{{$format_amount($amount_paid())}}</span>
         </div>
 
         {{--        <div class="total-row">--}}
