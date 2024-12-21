@@ -57,6 +57,7 @@ class IncomeController extends Controller {
                     . '<a href="' . action('IncomeController@show', $trans['id']) . '" data-title="' . _lang('View Income') . '" class="btn btn-info btn-sm ajax-modal"><i class="ti-eye"></i></a>'
                     . csrf_field()
                         . '<a onclick="downloadPOS(event)" href="'. action('POSController@show', $trans['id']) . '" data-title="' . _lang('Download POS Invoice') . '" class="btn btn-primary btn-sm dl-pos-inv"><i class="ti-file" style="pointer-events: none"></i></a> '
+
                     . '<input name="_method" type="hidden" value="DELETE">'
                     . '<button class="btn btn-danger btn-sm btn-remove" type="submit"><i class="ti-trash"></i></button>'
                         . '</form>';

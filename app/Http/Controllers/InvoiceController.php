@@ -72,6 +72,7 @@ class InvoiceController extends Controller {
                 . '<a class="dropdown-item" href="' . action('InvoiceController@show', $invoice->id) . '" data-title="' . _lang('View Invoice') . '" data-fullscreen="true"><i class="ti-eye"></i> ' . _lang('View') . '</a>'
                 . '<a href="' . route('invoices.create_payment', $invoice->id) . '" data-title="' . _lang('Make Payment') . '" class="dropdown-item ajax-modal"><i class="ti-credit-card"></i> ' . _lang('Make Payment') . '</a>'
                 . '<a href="' . route('invoices.view_payment', $invoice->id) . '" data-title="' . _lang('View Payment') . '" data-fullscreen="true" class="dropdown-item ajax-modal"><i class="ti-credit-card"></i> ' . _lang('View Payment') . '</a>'
+                . '<a onclick="downloadPOS(event)" href="'. action('POSController@downloadInvoicePOS', $invoice->id) . '" data-title="' . _lang('POS Invoice') . '" class="dropdown-item"><i class="ti-file" style="pointer-events: none;"></i> ' . _lang('POS Invoice') . '</a>'
                 . '<form action="' . action('InvoiceController@destroy', $invoice['id']) . '" method="post">'
                 . csrf_field()
                 . '<input name="_method" type="hidden" value="DELETE">'

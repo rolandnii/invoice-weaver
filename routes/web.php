@@ -27,7 +27,8 @@ Route::post('/forgot-password',[ForgotPasswordController::class, 'store'])->midd
 
 Auth::routes(['verify' => true, 'register' => true]);
 
-Route::get('pos/{transaction}',[POSController::class,'show']);
+Route::get('payment/pos/{transaction}',[POSController::class,'show'])->name('dl.payment.pos');
+Route::get('invoice/pos/{invoice}',[POSController::class,'downloadInvoicePOS'])->name('dl.invoice.pos');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
