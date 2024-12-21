@@ -20,10 +20,12 @@
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
+        "milon/barcode": "^8.0",
         "paypal/paypal-checkout-sdk": "1.0.1",
         "stripe/stripe-php": "^7.78",
         "unicodeveloper/laravel-paystack": "^1.1",
         "yajra/laravel-datatables": "^1.5"
+
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

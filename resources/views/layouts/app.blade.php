@@ -259,7 +259,7 @@
 
     <!-- Custom JS -->
     @yield('js-script')
-
+@stack('custom')
 </body>
 
 </html>

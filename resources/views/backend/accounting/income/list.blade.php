@@ -16,6 +16,7 @@
                     <thead>
                         <tr>
                             <th>{{ _lang('Date') }}</th>
+                            <th>{{ _lang('Reference') }}</th>
                             <th>{{ _lang('Account') }}</th>
                             <th>{{ _lang('Income Type') }}</th>
                             <th class="text-right">{{ _lang('Amount') }}</th>
@@ -37,3 +38,7 @@
 @section('js-script')
 <script src="{{ asset('backend/assets/js/datatables/income-table.js?v=1.1') }}"></script>
 @endsection
+
+@push('custom')
+    <script src="{{asset('backend/assets/js/pos.js')}}"></script>
+@endpush

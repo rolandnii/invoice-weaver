@@ -69,3 +69,7 @@
 @section('js-script')
 <script src="{{ asset('backend/assets/js/datatables/invoice-table.js?v=1.1') }}"></script>
 @endsection
+
+@push('custom')
+    <script src="{{asset('backend/assets/js/pos.js')}}"></script>
+@endpush

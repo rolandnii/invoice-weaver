@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\MultiTenant;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 
 class Transaction extends Model
 {
@@ -14,8 +16,10 @@ class Transaction extends Model
      * @var string
      */
     protected $table = 'transactions';
-	
-	public function account()
+
+
+
+    public function account()
     {
         return $this->belongsTo('App\Models\Account')->withDefault();
     }
@@ -50,5 +54,18 @@ class Transaction extends Model
 		$date_format = get_date_format();
         return \Carbon\Carbon::parse($value)->format("$date_format");
     }
+
+    public function invoice(): BelongsTo
+    {
+        return  $this->belongsTo(Invoice::class);
+    }
+
+    public function setReferenceAttribute($value)
+    {
+        $this->attributes['reference'] = bin2hex(random_bytes(5));
+
+    }
+
+
 	
 }

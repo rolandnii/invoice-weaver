@@ -12,6 +12,10 @@
 					name: "trans_date"
 				},
 				{
+					data:"reference",
+					name:"reference",
+				},
+				{
 					data: "account.account_title",
 					name: "account.account_title"
 				},

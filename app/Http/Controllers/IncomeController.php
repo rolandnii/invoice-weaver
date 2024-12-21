@@ -20,6 +20,7 @@ class IncomeController extends Controller {
 
     public function get_table_data() {
 
+
         $currency = currency();
 
         $transactions = Transaction::with("account")
@@ -46,6 +47,7 @@ class IncomeController extends Controller {
                     . '<a href="' . action('IncomeController@edit', $trans['id']) . '" data-title="' . _lang('Update Income') . '" class="btn btn-warning btn-sm ajax-modal"><i class="ti-pencil-alt"></i></a> '
                     . '<a href="' . action('IncomeController@show', $trans['id']) . '" data-title="' . _lang('View Income') . '" class="btn btn-info btn-sm ajax-modal"><i class="ti-eye"></i></a> '
                     . csrf_field()
+                    . '<a onclick="downloadPOS(event)" href="'. action('POSController@show', $trans['id']) . '" data-title="' . _lang('Download POS Invoice') . '" class="btn btn-primary btn-sm dl-pos-inv"><i class="ti-file" style="pointer-events: none"></i></a> '
                     . '<input name="_method" type="hidden" value="DELETE">'
                     . '<button class="btn btn-danger btn-sm btn-remove" type="submit"><i class="ti-trash"></i></button>'
                         . '</form>';
@@ -54,6 +56,7 @@ class IncomeController extends Controller {
                     . '<a href="#" data-title="' . _lang('Update Income') . '" class="btn btn-warning btn-sm ajax-modal" disabled><i class="ti-pencil-alt"></i></a>'
                     . '<a href="' . action('IncomeController@show', $trans['id']) . '" data-title="' . _lang('View Income') . '" class="btn btn-info btn-sm ajax-modal"><i class="ti-eye"></i></a>'
                     . csrf_field()
+                        . '<a onclick="downloadPOS(event)" href="'. action('POSController@show', $trans['id']) . '" data-title="' . _lang('Download POS Invoice') . '" class="btn btn-primary btn-sm dl-pos-inv"><i class="ti-file" style="pointer-events: none"></i></a> '
                     . '<input name="_method" type="hidden" value="DELETE">'
                     . '<button class="btn btn-danger btn-sm btn-remove" type="submit"><i class="ti-trash"></i></button>'
                         . '</form>';

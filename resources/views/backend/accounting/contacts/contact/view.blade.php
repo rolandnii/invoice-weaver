@@ -35,7 +35,7 @@
                         <table class="table table-bordered">
                             <tr>
                                 <td colspan="2" class="text-center"><img class="thumb-image-md img-thumbnail"
-                                        src="{{ asset('public/uploads/contacts/'.$contact->contact_image) }}"></td>
+                                        src="{{ asset('uploads/contacts/'.$contact->contact_image) }}"></td>
                             </tr>
                             <tr>
                                 <td>{{ _lang('Profile Type') }}</td>

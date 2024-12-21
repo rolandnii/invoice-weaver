@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\POSController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,7 @@ Route::post('/forgot-password',[ForgotPasswordController::class, 'store'])->midd
 
 Auth::routes(['verify' => true, 'register' => true]);
 
+Route::get('pos/{transaction}',[POSController::class,'show']);
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
