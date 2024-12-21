@@ -7,9 +7,9 @@ use App\Models\Invoice;
 use App\Models\InvoiceItem;
 use App\Models\InvoiceItemTax;
 use App\Mail\GeneralMail;
-use App\Quotation;
-use App\QuotationItem;
-use App\QuotationItemTax;
+use App\Models\Quotation;
+use App\Models\QuotationItem;
+use App\Models\QuotationItemTax;
 use App\Models\Stock;
 use App\Models\Tax;
 use App\Utilities\Overrider;
@@ -34,7 +34,7 @@ class QuotationController extends Controller {
 
         $currency = currency();
 
-        $quotations = Quotation::with("client")
+        $quotations = \App\Models\Quotation::with("client")
             ->select('quotations.*')
             ->orderBy("quotations.id", "desc");
 

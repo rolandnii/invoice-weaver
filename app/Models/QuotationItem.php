@@ -22,7 +22,7 @@ class QuotationItem extends Model
 
     public function taxes()
     {
-        return $this->hasMany('App\QuotationItemTax',"quotation_item_id");
+        return $this->hasMany('App\Models\QuotationItemTax',"quotation_item_id");
     }
 
 }

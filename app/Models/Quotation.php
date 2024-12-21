@@ -17,7 +17,7 @@ class Quotation extends Model
     
 	public function quotation_items()
     {
-        return $this->hasMany('App\QuotationItem',"quotation_id");
+        return $this->hasMany('App\Models\QuotationItem',"quotation_id");
     }
 
     public function client()
