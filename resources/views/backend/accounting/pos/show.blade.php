@@ -194,7 +194,7 @@ $currency = currency() ?? $currency;
     </div>
 
     <div class="footer small-text">
-        <span>#{{$transaction->reference}}</span>
+        <span>{{'#'.$transaction->reference ?: ''}}</span>
         <span>{{date('d/m/Y H:i:s', strtotime($transaction->created_at))}}</span>
         <span> By Invoice Weaver</span>
     </div>
