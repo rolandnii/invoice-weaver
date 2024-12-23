@@ -118,6 +118,7 @@
                             <ul>
                                 <li class="transition-el transition-el-1"><a href="{{url('/')}}" id="home-trigger" class="home-trigger">Home</a></li>
                                 <li class="transition-el transition-el-3"><a href="{{route('login')}}">Login</a></li>
+                                <li class="transition-el transition-el-3"><a href="https://hr.invoiceweaver.com/">Hr Weaver</a></li>
                                 <li class="transition-el transition-el-4"><a href="https://wa.me/message/FMIHBPIG5HBPI1">Support</a></li>
                                 <li class="transition-el transition-el-3"><a href="https://cyclux.com/invoice-and-inventory-management-system/" target="_blank">Who We Are</a></li>
                             </ul>
